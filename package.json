@@ -1,0 +1,45 @@
+{
+  "private": true,
+  "name": "bingobango",
+  "version": "0.0.1",
+  "description": "A very stupid bingo board template",
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "eslint": "^6.1.0",
+    "eslint-plugin-react": "^7.14.3",
+    "html-webpack-plugin": "^3.2.0",
+    "postcss-loader": "^3.0.0",
+    "prettier": "1.18.2",
+    "style-loader": "^1.0.0",
+    "tailwindcss": "^1.1.3",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.8.0"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --open",
+    "watch": "webpack --watch",
+    "build": "webpack --mode='production'",
+    "lint": "eslint src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gggritso/bingobango.git"
+  },
+  "keywords": [
+    "game",
+    "bingo"
+  ],
+  "author": "George Gritsouk",
+  "license": "ISC"
+}
