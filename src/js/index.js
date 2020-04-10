@@ -2,6 +2,6 @@ import "../index.css";
 
 import React from "react";
 import ReactDOM from "react-dom";
-import { Board } from "./components/Board.jsx";
+import { Card } from "./components/Card.jsx";
 
-ReactDOM.render(<Board />, document.getElementById("board"));
+ReactDOM.render(<Card />, document.getElementById("card"));

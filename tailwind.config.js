@@ -5,7 +5,7 @@ module.exports = {
       "16": "16px",
       "20": "20px",
       "30": "30px",
-      "40": "40px",
+      "40": "40px"
     },
     spacing: {
       0: "0",
@@ -14,10 +14,11 @@ module.exports = {
       4: "4px",
       8: "8px",
       16: "16px",
-      200: "200px",
+      32: "32px",
+      48: "48px"
     },
-    extend: {},
+    extend: {}
   },
   variants: {},
-  plugins: [],
+  plugins: []
 };

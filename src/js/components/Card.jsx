@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 
 import CARDS from "../data/cards";
 
-export class Board extends Component {
+export class Card extends Component {
   constructor(props) {
     super(props);
 
@@ -10,13 +10,13 @@ export class Board extends Component {
 
     this.state = {
       daubed: [],
-      board: CARDS.test,
+      board: CARDS.test
     };
   }
 
   daub(square) {
     this.setState({
-      daubed: [...this.state.daubed, square],
+      daubed: [...this.state.daubed, square]
     });
   }
 
