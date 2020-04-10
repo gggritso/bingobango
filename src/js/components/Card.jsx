@@ -3,7 +3,7 @@ import chunk from "lodash/chunk";
 import take from "lodash/take";
 import shuffle from "lodash/shuffle";
 
-import MEETING_CLICHES from "../data/meeting-cliches";
+import TEXTS from "../data/meeting-cliches";
 
 export class Card extends Component {
   constructor(props) {
@@ -12,7 +12,7 @@ export class Card extends Component {
     this.toggle = this.toggle.bind(this);
     this.hasBeenDaubed = this.hasBeenDaubed.bind(this);
 
-    const pool = take(shuffle(MEETING_CLICHES), 24);
+    const pool = take(shuffle(TEXTS), 24);
 
     this.state = {
       daubed: ["FREE"],
