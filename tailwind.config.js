@@ -20,6 +20,12 @@ module.exports = {
       48: "48px",
       62: "62px"
     },
+    borderWidth: {
+      default: "1px",
+      "0": "0",
+      "1": "1px",
+      "2": "2px"
+    },
     extend: {}
   },
   variants: {},

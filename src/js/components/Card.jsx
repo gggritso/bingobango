@@ -21,7 +21,6 @@ export class Card extends Component {
   }
 
   toggle(text) {
-    console.log(text);
     this.hasBeenDaubed(text) ? this.undaub(text) : this.daub(text);
   }
 
@@ -51,23 +50,25 @@ export class Card extends Component {
           <h1 className="text-20 my-16">BingoBango</h1>
         </div>
         <div className="text-center">
-          {chunk(this.state.texts, 5).map((row, y) => (
-            <div className="flex border-1 justify-center" key={y}>
-              {row.map((text, x) => {
-                return (
-                  <div
-                    className={`flex w-62 h-62 p-2 select-none items-center text-center justify-center border-solid border-1 border-black text-11 uppercase ${
-                      this.hasBeenDaubed(text) ? DAUBED_CLASSES : UNDAUBED_CLASSES
-                    }`}
-                    key={x}
-                    onClick={() => this.toggle(text)}
-                  >
-                    <span>{text}</span>
-                  </div>
-                );
-              })}
-            </div>
-          ))}
+          <div className="inline-block border-solid border-1 border-black">
+            {chunk(this.state.texts, 5).map((row, y) => (
+              <div className="flex justify-center" key={y}>
+                {row.map((text, x) => {
+                  return (
+                    <div
+                      className={`flex w-62 h-62 p-2 select-none items-center text-center justify-center border-solid border-1 border-black text-11 uppercase ${
+                        this.hasBeenDaubed(text) ? DAUBED_CLASSES : UNDAUBED_CLASSES
+                      }`}
+                      key={x}
+                      onClick={() => this.toggle(text)}
+                    >
+                      <span>{text}</span>
+                    </div>
+                  );
+                })}
+              </div>
+            ))}
+          </div>
         </div>
       </Fragment>
     );
