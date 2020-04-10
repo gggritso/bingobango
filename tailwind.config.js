@@ -1,6 +1,8 @@
 module.exports = {
   theme: {
     fontSize: {
+      "10": "10px",
+      "11": "11px",
       "12": "12px",
       "16": "16px",
       "20": "20px",
@@ -15,7 +17,8 @@ module.exports = {
       8: "8px",
       16: "16px",
       32: "32px",
-      48: "48px"
+      48: "48px",
+      62: "62px"
     },
     extend: {}
   },
