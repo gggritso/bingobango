@@ -3,7 +3,8 @@ import chunk from "lodash/chunk";
 import take from "lodash/take";
 import shuffle from "lodash/shuffle";
 
-import TEXTS from "../data/meeting-cliches";
+import TEXTS from "../data/wedding-crashers";
+const CENTER = "Problematic";
 
 export class Card extends Component {
   constructor(props) {
@@ -15,8 +16,8 @@ export class Card extends Component {
     const pool = take(shuffle(TEXTS), 24);
 
     this.state = {
-      daubed: ["FREE"],
-      texts: [...pool.slice(0, 12), "FREE", ...pool.slice(12)]
+      daubed: [CENTER],
+      texts: [...pool.slice(0, 12), CENTER, ...pool.slice(12)]
     };
   }
 
@@ -56,7 +57,7 @@ export class Card extends Component {
                 {row.map((text, x) => {
                   return (
                     <div
-                      className={`flex w-62 h-62 p-2 select-none items-center text-center justify-center border-solid border-1 border-black text-11 uppercase ${
+                      className={`flex w-72 h-72 p-2 select-none items-center text-center justify-center border-solid border-1 border-black text-10 uppercase ${
                         this.hasBeenDaubed(text) ? DAUBED_CLASSES : UNDAUBED_CLASSES
                       }`}
                       key={x}

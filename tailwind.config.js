@@ -18,7 +18,8 @@ module.exports = {
       16: "16px",
       32: "32px",
       48: "48px",
-      62: "62px"
+      64: "64px",
+      72: "72px"
     },
     borderWidth: {
       default: "1px",
