@@ -16,6 +16,9 @@ export class Card extends Component {
 
     try {
       this.state = JSON.parse(localStorage.getItem("bingo"));
+      if (!this.state) {
+        throw "No current state";
+      }
     } catch (error) {
       this.state = this.newCard();
     }
