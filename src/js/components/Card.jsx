@@ -10,15 +10,30 @@ export class Card extends Component {
   constructor(props) {
     super(props);
 
+    this.reset = this.reset.bind(this);
     this.toggle = this.toggle.bind(this);
     this.hasBeenDaubed = this.hasBeenDaubed.bind(this);
 
+    try {
+      this.state = JSON.parse(localStorage.getItem("bingo"));
+    } catch (error) {
+      this.state = this.newCard();
+    }
+  }
+
+  newCard() {
     const pool = take(shuffle(TEXTS), 24);
 
-    this.state = {
+    return {
       daubed: [CENTER],
       texts: [...pool.slice(0, 12), CENTER, ...pool.slice(12)]
     };
+  }
+
+  reset() {
+    const card = this.newCard();
+    this.setState(card);
+    localStorage.setItem("bingo", JSON.stringify(card));
   }
 
   toggle(text) {
@@ -26,15 +41,25 @@ export class Card extends Component {
   }
 
   daub(textToDaub) {
-    this.setState({
-      daubed: [...this.state.daubed, textToDaub]
-    });
+    this.setState(
+      {
+        daubed: [...this.state.daubed, textToDaub]
+      },
+      () => {
+        localStorage.setItem("bingo", JSON.stringify(this.state));
+      }
+    );
   }
 
   undaub(textToUndaub) {
-    this.setState({
-      daubed: this.state.daubed.filter(text => text !== textToUndaub)
-    });
+    this.setState(
+      {
+        daubed: this.state.daubed.filter(text => text !== textToUndaub)
+      },
+      () => {
+        localStorage.setItem("bingo", JSON.stringify(this.state));
+      }
+    );
   }
 
   hasBeenDaubed(text) {
@@ -48,7 +73,12 @@ export class Card extends Component {
     return (
       <Fragment>
         <div className="text-center">
-          <h1 className="text-20 my-16">BingoBango</h1>
+          <h1 className="flex flex-grow-0 items-center m-16 text-20">
+            <span className="mr-auto">BingoBango </span>
+            <button className="p-2 bg-black text-white" onClick={() => this.reset()}>
+              New →
+            </button>
+          </h1>
         </div>
         <div className="text-center">
           <div className="inline-block border-solid border-1 border-black">
