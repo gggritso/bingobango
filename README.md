@@ -10,5 +10,3 @@ A small mobile-only Bingo game with hard-coded topics. A plain black-and-white b
 yarn
 yarn start
 ```
-
-I deploy this on Netlify.
