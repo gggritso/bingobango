@@ -3,8 +3,8 @@ import chunk from "lodash/chunk";
 import take from "lodash/take";
 import shuffle from "lodash/shuffle";
 
-import TEXTS from "../data/wedding-crashers";
-const CENTER = "Problematic";
+import DATA from "../data/wedding-crashers";
+const { TEXTS, FREE } = DATA;
 
 export class Card extends Component {
   constructor(props) {
@@ -28,8 +28,8 @@ export class Card extends Component {
     const pool = take(shuffle(TEXTS), 24);
 
     return {
-      daubed: [CENTER],
-      texts: [...pool.slice(0, 12), CENTER, ...pool.slice(12)]
+      daubed: [FREE],
+      texts: [...pool.slice(0, 12), FREE, ...pool.slice(12)]
     };
   }
 
