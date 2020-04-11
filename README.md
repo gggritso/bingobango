@@ -1,3 +1,10 @@
 # BingoBango
 
-Okay so, there is a card. On the card are squares. Each square has a coordinate, and some texts. What is a good name for the texts? Things. Events. Categories. Clues. Maybe I need to wait for the group to come up with the bingo terms.
+A small mobile-only Bingo game with hard-coded topics. A plain black-and-white board with text squares stored as JSON files. Squares are clickable, and the state is saved to `localStorage`.
+
+```
+yarn
+yarn start
+```
+
+I deploy this on Netlify.
