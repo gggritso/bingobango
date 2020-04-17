@@ -3,7 +3,7 @@ import chunk from "lodash/chunk";
 import take from "lodash/take";
 import shuffle from "lodash/shuffle";
 
-import DATA from "../data/numbers";
+import DATA from "../data/bad-neighbours";
 const { TEXTS, FREE } = DATA;
 
 export class Card extends Component {
