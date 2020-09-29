@@ -3,7 +3,7 @@ import chunk from "lodash/chunk";
 import take from "lodash/take";
 import shuffle from "lodash/shuffle";
 
-import DATA from "../data/ru-paul";
+import DATA from "../data/debate";
 const { TEXTS, FREE } = DATA;
 
 export class Card extends Component {
@@ -29,7 +29,7 @@ export class Card extends Component {
 
     return {
       daubed: [FREE],
-      texts: [...pool.slice(0, 12), FREE, ...pool.slice(12)]
+      texts: [...pool.slice(0, 12), FREE, ...pool.slice(12)],
     };
   }
 
@@ -46,7 +46,7 @@ export class Card extends Component {
   daub(textToDaub) {
     this.setState(
       {
-        daubed: [...this.state.daubed, textToDaub]
+        daubed: [...this.state.daubed, textToDaub],
       },
       () => {
         localStorage.setItem("bingo", JSON.stringify(this.state));
@@ -57,7 +57,7 @@ export class Card extends Component {
   undaub(textToUndaub) {
     this.setState(
       {
-        daubed: this.state.daubed.filter(text => text !== textToUndaub)
+        daubed: this.state.daubed.filter((text) => text !== textToUndaub),
       },
       () => {
         localStorage.setItem("bingo", JSON.stringify(this.state));
