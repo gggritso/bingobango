@@ -3,7 +3,7 @@ import chunk from "lodash/chunk";
 import take from "lodash/take";
 import shuffle from "lodash/shuffle";
 
-import DATA from "../data/debate";
+import DATA from "../data/home-alone";
 const { TEXTS, FREE } = DATA;
 
 export class Card extends Component {
@@ -76,15 +76,15 @@ export class Card extends Component {
     return (
       <Fragment>
         <div className="text-center">
-          <h1 className="flex flex-grow-0 items-center m-16 text-20">
+          <h1 className="flex items-center flex-grow-0 m-16 text-20">
             <span className="mr-auto">BingoBango </span>
-            <button className="p-2 bg-black text-white" onClick={() => this.reset()}>
+            <button className="p-2 text-white bg-black" onClick={() => this.reset()}>
               New →
             </button>
           </h1>
         </div>
         <div className="text-center">
-          <div className="inline-block border-solid border-1 border-black">
+          <div className="inline-block border-black border-solid border-1">
             {chunk(this.state.texts, 5).map((row, y) => (
               <div className="flex justify-center" key={y}>
                 {row.map((text, x) => {
