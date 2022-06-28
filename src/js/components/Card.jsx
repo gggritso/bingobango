@@ -24,6 +24,10 @@ export class Card extends Component {
     }
   }
 
+  throwError() {
+    throw new Error("Uh oh, Now you've done it!");
+  }
+
   newCard() {
     const pool = take(shuffle(TEXTS), 24);
 
@@ -78,6 +82,9 @@ export class Card extends Component {
         <div className="text-center">
           <h1 className="flex items-center flex-grow-0 m-16 text-20">
             <span className="mr-auto">BingoBango </span>
+            <button className="p-2 text-white bg-black mr-8 " onClick={() => this.throwError()}>
+              Cause Error →
+            </button>
             <button className="p-2 text-white bg-black" onClick={() => this.reset()}>
               New →
             </button>
