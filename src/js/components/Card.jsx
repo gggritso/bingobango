@@ -134,17 +134,18 @@ const TextCell = ({ text, hasBeenDaubed, onClick }) => {
 };
 
 const ImageCell = ({ url, hasBeenDaubed, onClick }) => {
-  const DAUBED_CLASSES = "bg-black opacity-25";
+  const DAUBED_CLASSES = "opacity-25";
   const UNDAUBED_CLASSES = "opacity-100";
 
   return (
     <div
-      className={`flex w-72 h-72 p-2 select-none items-center text-center justify-center border-solid border-1 border-black text-10 uppercase ${
-        hasBeenDaubed ? DAUBED_CLASSES : UNDAUBED_CLASSES
-      }`}
+      className={`flex w-72 h-72 p-2 bg-black select-none border-solid border-1 border-black`}
       onClick={onClick}
     >
-      <img src={`/img/${url}`} />
+      <img
+        src={`/img/${url}`}
+        className={` ${hasBeenDaubed ? DAUBED_CLASSES : UNDAUBED_CLASSES}`}
+      />
     </div>
   );
 };
