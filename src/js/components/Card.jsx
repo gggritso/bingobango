@@ -3,7 +3,7 @@ import chunk from "lodash/chunk";
 import take from "lodash/take";
 import shuffle from "lodash/shuffle";
 
-import DATA from "../data/home-alone.json";
+import DATA from "../data/unsplash.json";
 const { TEXTS, FREE } = DATA;
 
 export class Card extends Component {
@@ -92,7 +92,14 @@ export class Card extends Component {
             {chunk(this.state.texts, 5).map((row, y) => (
               <div className="flex justify-center" key={y}>
                 {row.map((text, x) => {
-                  return (
+                  return text.endsWith(".jpg") ? (
+                    <ImageCell
+                      url={text}
+                      hasBeenDaubed={this.hasBeenDaubed(text)}
+                      key={x}
+                      onClick={() => this.toggle(text)}
+                    />
+                  ) : (
                     <TextCell
                       text={text}
                       hasBeenDaubed={this.hasBeenDaubed(text)}
@@ -122,6 +129,22 @@ const TextCell = ({ text, hasBeenDaubed, onClick }) => {
       onClick={onClick}
     >
       <span>{text}</span>
+    </div>
+  );
+};
+
+const ImageCell = ({ url, hasBeenDaubed, onClick }) => {
+  const DAUBED_CLASSES = "bg-black opacity-25";
+  const UNDAUBED_CLASSES = "opacity-100";
+
+  return (
+    <div
+      className={`flex w-72 h-72 p-2 select-none items-center text-center justify-center border-solid border-1 border-black text-10 uppercase ${
+        hasBeenDaubed ? DAUBED_CLASSES : UNDAUBED_CLASSES
+      }`}
+      onClick={onClick}
+    >
+      <img src={`/img/${url}`} />
     </div>
   );
 };

@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   mode: "development",
@@ -13,6 +14,9 @@ module.exports = {
       title: "BingoBango",
       template: "src/index.ejs"
     }),
+    new CopyWebpackPlugin({
+      patterns: [{ from: "src/img", to: "img" }]
+    })
   ],
   module: {
     rules: [
