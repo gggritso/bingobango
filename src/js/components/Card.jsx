@@ -33,7 +33,7 @@ export class Card extends Component {
 
     return {
       daubed: [FREE],
-      texts: [...pool.slice(0, 12), FREE, ...pool.slice(12)],
+      texts: [...pool.slice(0, 12), FREE, ...pool.slice(12)]
     };
   }
 
@@ -50,7 +50,7 @@ export class Card extends Component {
   daub(textToDaub) {
     this.setState(
       {
-        daubed: [...this.state.daubed, textToDaub],
+        daubed: [...this.state.daubed, textToDaub]
       },
       () => {
         localStorage.setItem("bingo", JSON.stringify(this.state));
@@ -61,7 +61,7 @@ export class Card extends Component {
   undaub(textToUndaub) {
     this.setState(
       {
-        daubed: this.state.daubed.filter((text) => text !== textToUndaub),
+        daubed: this.state.daubed.filter(text => text !== textToUndaub)
       },
       () => {
         localStorage.setItem("bingo", JSON.stringify(this.state));
@@ -82,10 +82,16 @@ export class Card extends Component {
         <div className="text-center">
           <h1 className="flex items-center flex-grow-0 m-16 text-20">
             <span className="mr-auto">BingoBango </span>
-            <button className="p-2 text-white bg-black mr-8 " onClick={() => this.throwError()}>
+            <button
+              className="p-2 text-white bg-black mr-8 "
+              onClick={() => this.throwError()}
+            >
               Cause Error →
             </button>
-            <button className="p-2 text-white bg-black" onClick={() => this.reset()}>
+            <button
+              className="p-2 text-white bg-black"
+              onClick={() => this.reset()}
+            >
               New →
             </button>
           </h1>
@@ -98,7 +104,9 @@ export class Card extends Component {
                   return (
                     <div
                       className={`flex w-72 h-72 p-2 select-none items-center text-center justify-center border-solid border-1 border-black text-10 uppercase ${
-                        this.hasBeenDaubed(text) ? DAUBED_CLASSES : UNDAUBED_CLASSES
+                        this.hasBeenDaubed(text)
+                          ? DAUBED_CLASSES
+                          : UNDAUBED_CLASSES
                       }`}
                       key={x}
                       onClick={() => this.toggle(text)}
