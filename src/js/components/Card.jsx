@@ -83,12 +83,6 @@ export class Card extends Component {
           <h1 className="flex items-center flex-grow-0 m-16 text-20">
             <span className="mr-auto">BingoBango </span>
             <button
-              className="p-2 text-white bg-black mr-8 "
-              onClick={() => this.throwError()}
-            >
-              Cause Error →
-            </button>
-            <button
               className="p-2 text-white bg-black"
               onClick={() => this.reset()}
             >
