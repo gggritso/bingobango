@@ -143,7 +143,7 @@ const ImageCell = ({ url, hasBeenDaubed, onClick }) => {
       onClick={onClick}
     >
       <img
-        src={`/img/${url}`}
+        src={`./img/${url}`}
         className={` ${hasBeenDaubed ? DAUBED_CLASSES : UNDAUBED_CLASSES}`}
       />
     </div>
