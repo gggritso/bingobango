@@ -6,12 +6,12 @@ module.exports = {
   entry: "./src/js/index.js",
   output: {
     filename: "script.js",
-    path: __dirname + "/dist",
+    path: __dirname + "/dist"
   },
   plugins: [
     new HtmlWebpackPlugin({
       title: "BingoBango",
-      template: "src/index.ejs",
+      template: "src/index.ejs"
     }),
   ],
   module: {
@@ -20,12 +20,12 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
-        },
+          loader: "babel-loader"
+        }
       },
       {
         test: /\.s[ac]ss$/i,
-        use: ["style-loader", "css-loader", "sass-loader"],
+        use: ["style-loader", "css-loader", "sass-loader"]
       },
       {
         test: /\.css$/,
@@ -36,14 +36,14 @@ module.exports = {
             loader: "postcss-loader",
             options: {
               ident: "postcss",
-              plugins: [require("tailwindcss"), require("autoprefixer")],
-            },
-          },
-        ],
-      },
-    ],
+              plugins: [require("tailwindcss"), require("autoprefixer")]
+            }
+          }
+        ]
+      }
+    ]
   },
   devServer: {
-    contentBase: "./dist",
-  },
+    contentBase: "./dist"
+  }
 };
