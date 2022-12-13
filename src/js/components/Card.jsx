@@ -5,8 +5,6 @@ import shuffle from "lodash/shuffle";
 
 import DATA from "../data/home-alone.json";
 const { TEXTS, FREE } = DATA;
-const DAUBED_CLASSES = "text-white bg-black";
-const UNDAUBED_CLASSES = "text-black bg-white";
 
 export class Card extends Component {
   constructor(props) {
@@ -112,13 +110,18 @@ export class Card extends Component {
   }
 }
 
-const TextCell = ({ text, hasBeenDaubed, onClick }) => (
-  <div
-    className={`flex w-72 h-72 p-2 select-none items-center text-center justify-center border-solid border-1 border-black text-10 uppercase ${
-      hasBeenDaubed ? DAUBED_CLASSES : UNDAUBED_CLASSES
-    }`}
-    onClick={onClick}
-  >
-    <span>{text}</span>
-  </div>
-);
+const TextCell = ({ text, hasBeenDaubed, onClick }) => {
+  const DAUBED_CLASSES = "text-white bg-black";
+  const UNDAUBED_CLASSES = "text-black bg-white";
+
+  return (
+    <div
+      className={`flex w-72 h-72 p-2 select-none items-center text-center justify-center border-solid border-1 border-black text-10 uppercase ${
+        hasBeenDaubed ? DAUBED_CLASSES : UNDAUBED_CLASSES
+      }`}
+      onClick={onClick}
+    >
+      <span>{text}</span>
+    </div>
+  );
+};
