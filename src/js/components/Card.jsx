@@ -3,7 +3,7 @@ import chunk from "lodash/chunk";
 import take from "lodash/take";
 import shuffle from "lodash/shuffle";
 
-import DATA from "../data/unsplash.json";
+import DATA from "../data/bridesmaids.json";
 const { TEXTS, FREE } = DATA;
 
 export class Card extends Component {
