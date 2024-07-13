@@ -3,7 +3,7 @@ import chunk from "lodash/chunk";
 import take from "lodash/take";
 import shuffle from "lodash/shuffle";
 
-import DATA from "../data/bridesmaids.json";
+import DATA from "../data/euro-2024.json";
 const { TEXTS, FREE } = DATA;
 
 export class Card extends Component {
@@ -78,7 +78,7 @@ export class Card extends Component {
       <Fragment>
         <div className="text-center">
           <h1 className="flex items-center flex-grow-0 m-16 text-20">
-            <span className="mr-auto">BingoBango </span>
+            <span className="mr-auto">🇪🇸 EURO 2024 🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
             <button
               className="p-2 text-white bg-black"
               onClick={() => this.reset()}
