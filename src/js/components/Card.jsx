@@ -123,7 +123,7 @@ const TextCell = ({ text, hasBeenDaubed, onClick }) => {
 
   return (
     <div
-      className={`flex w-72 h-72 p-2 select-none items-center text-center justify-center border-solid border-1 border-black text-10 uppercase ${
+      className={`flex w-72 h-72 p-2 select-none items-center text-center justify-center leading-3 border-solid border-1 border-black text-10 uppercase ${
         hasBeenDaubed ? DAUBED_CLASSES : UNDAUBED_CLASSES
       }`}
       onClick={onClick}
