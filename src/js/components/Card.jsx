@@ -3,7 +3,7 @@ import chunk from "lodash/chunk";
 import take from "lodash/take";
 import shuffle from "lodash/shuffle";
 
-import DATA from "../data/oscars-2025.json";
+import DATA from "../data/rocky-horror.json";
 const { TITLE, TEXTS, FREE } = DATA;
 
 export class Card extends Component {
