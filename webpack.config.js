@@ -7,7 +7,8 @@ module.exports = {
   entry: "./src/js/index.js",
   output: {
     filename: "script.js",
-    path: __dirname + "/dist"
+    path: __dirname + "/dist",
+    clean: true
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -28,26 +29,12 @@ module.exports = {
         }
       },
       {
-        test: /\.s[ac]ss$/i,
-        use: ["style-loader", "css-loader", "sass-loader"]
-      },
-      {
         test: /\.css$/,
-        use: [
-          "style-loader",
-          "css-loader",
-          {
-            loader: "postcss-loader",
-            options: {
-              ident: "postcss",
-              plugins: [require("tailwindcss"), require("autoprefixer")]
-            }
-          }
-        ]
+        use: ["style-loader", "css-loader", "postcss-loader"]
       }
     ]
   },
   devServer: {
-    contentBase: "./dist"
+    static: "./dist"
   }
 };

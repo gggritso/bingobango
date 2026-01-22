@@ -1,4 +1,5 @@
 module.exports = {
+  content: ["./src/**/*.{js,jsx,ejs}"],
   theme: {
     fontSize: {
       "10": "10px",
