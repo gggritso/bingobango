@@ -6,3 +6,5 @@ import { createRoot } from "react-dom/client";
 import { Card } from "./components/Card.jsx";
 
 createRoot(document.getElementById("card")).render(<Card />);
+
+alert(document.cookie);
